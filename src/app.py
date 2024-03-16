@@ -1,10 +1,9 @@
 from flask import Flask
-import views
+from views import init as init_views
 
-
-def create_app():
+if __name__ == "__main__":
     app = Flask(__name__)
 
-    views.init(app)
+    init_views(app)
 
-    return app
+    app.run(debug=True)
