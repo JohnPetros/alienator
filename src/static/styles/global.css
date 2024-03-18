@@ -1,6 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
   font-family: "Outfit", sans-serif;
 }
+
+button, input {
+  outline: none;
+  border: none;
+}
+
+button:focus-visible, input:focus-visible {
+  @apply focus-visible:ring-4 focus-visible:ring-fuchsia-400
+}
+
+button:hover, input:hover {
+  @apply opacity-75 transition-opacity duration-200
+}
+
 
 .cat-quote::after {
   content: "";
@@ -27,4 +45,12 @@
   background-color: #F5D0FE;
   border-right: 4px solid #E879F9;
   border-bottom: 4px solid #E879F9;
+}
+
+@media (min-width: 768px) {
+  .alienator-quote::before {
+    left: 4.5%;
+    top: -7px;
+    transform: rotate(225deg) translate(15px, 0px);
+  }
 }
