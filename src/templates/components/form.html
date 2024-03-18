@@ -1,13 +1,13 @@
-<div
-  class="absolute top-[40%] left-[10%] space-y-4 min-w-[20rem] p-6 border-2 border-fuchsia-400 rounded-md bg-fuchsia-800">
-  <h1 class="text-fuchsia-200 font-semibold text-4xl text-center">Alienator</h1>
-
+<div class="space-y-4">
   <p class="text-fuchsia-200 text-lg text-center">Type your question:</p>
 
-  <form action="/ask" class="flex flex-col gap-6">
-    <input type="text" placeholder="Your character is tall?"
-      class="rounded-lg px-4 py-2 bg-fuchsia-100 text-zinc-700 font-semibold border-3 border-fuchsia-400" autofocus>
-    <button type="submit"
-      class="w-max mx-auto px-4 py-1 rounded-lg bg-fuchsia-200 text-zinc-700 font-bold transition-transform duration-200 hover:scale-105">Send</button>
+  <form data-form="game-form" class="flex flex-col gap-6" hx-post="/ask" hx-trigger="submit"
+    hx-target="#alienator-quote">
+    <input type="text" name="question" placeholder="Your character is tall?"
+      class="rounded-lg px-4 py-2 bg-fuchsia-100 text-zinc-700 font-semibold" autofocus>
+    <button data-form="trigger" type="submit"
+      class="w-max mx-auto px-4 py-1 rounded-lg bg-fuchsia-200 text-zinc-700 font-bold transition-transform duration-200 hover:scale-105">
+      Send
+    </button>
   </form>
 </div>
