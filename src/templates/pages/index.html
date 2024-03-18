@@ -2,11 +2,24 @@
 
 {% block body %}
 
-<main class="relative h-full w-full bg-sprite bg-no-repeat bg-center sm:bg-cover bg-mobile">
+<main
+  class=" h-full w-full bg-[url('/static/images/sprite.gif')] bg-no-repeat bg-center bg-mobile-size sm:bg-cover overflow-hidden">
   {% include '/components/cat-quote.html' %}
   {% include '/components/alienator-quote.html' %}
 
-  <!-- {% include '/components/form.html' %} -->
+  <div class="hidden md:block md:absolute md:top-[40%] md:left-[12%]">
+    <div class="rounded-md max-w-[18rem] h-[12rem] p-6 border-2  border-fuchsia-400 bg-fuchsia-700">
+      <h1 class="text-fuchsia-200 font-semibold text-4xl text-center">Alienator</h1>
+      <div class="grid place-content-center h-full">
+        {% include '/components/game-button.html' %}
+      </div>
+    </div>
+  </div>
+
+
+  {% include '/components/modal.html' %}
 </main>
+
+<script type="module" src="{{ url_for('static', filename='scripts/pages/index.mjs') }}"></script>
 
 {% endblock body %}
