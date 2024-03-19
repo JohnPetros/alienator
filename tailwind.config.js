@@ -1,7 +1,7 @@
 module.exports = {
   content: [
-    './src/templates/**/*.html',
-    './src/static/src/**/*.js',
+    './src/ui/templates/**/*.html',
+    './src/ui/static/src/**/*.js',
     'node_modules/preline/dist/*.js',
   ],
   theme: {
