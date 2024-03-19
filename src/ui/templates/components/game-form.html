@@ -1,0 +1,17 @@
+{% set hyperscript = "on load put 'I will think of character and you should guess its name correctly.' into
+#alienator-quote then" if not has_game else '' %}
+
+<div id="game-form" class="space-y-4">
+  <p class="text-fuchsia-200 text-lg text-center">Type your question:</p>
+
+  <form data-form="game-form" class="flex flex-col gap-6" hx-post="/ask" hx-trigger="submit"
+    hx-target="#alienator-quote" _="{{ hyperscript }} on submit target.reset() then put '...' into #alienator-quote">
+    <input type="text" name="question" placeholder="Is the character tall?"
+      class="rounded-lg px-4 py-2 bg-fuchsia-100 text-zinc-700 font-semibold" autofocus>
+    <button data-form="trigger" type="submit"
+      class="w-max mx-auto px-4 py-1 rounded-lg bg-fuchsia-200 text-zinc-700 font-bold transition-transform duration-200 hover:scale-105"
+      data-loading-disable>
+      Send
+    </button>
+  </form>
+</div>

@@ -11,14 +11,18 @@
     <div class="rounded-md max-w-[18rem] p-6 border-2  border-fuchsia-400 bg-fuchsia-700">
       <h1 class="text-fuchsia-200 font-semibold text-4xl text-center">Alienator</h1>
       <div class="grid place-content-center min-h-[4rem] mt-3">
+        {% if has_game %}
+        {% include '/components/game-form.html' %}
+        {% else %}
         {% include '/components/game-button.html' %}
+        {% endif %}
       </div>
     </div>
   </div>
-
-
-  {% include '/components/modal.html' %}
 </main>
+
+{% include '/components/end-success-game-alert.html' %}
+{% include '/components/end-fail-game-alert.html' %}
 
 <script type="module" src="{{ url_for('static', filename='scripts/pages/index.mjs') }}"></script>
 
