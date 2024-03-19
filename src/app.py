@@ -1,9 +1,10 @@
 from flask import Flask
-from views import init as init_views
+from views import init_views
 
-if __name__ == "__main__":
-    app = Flask(__name__)
+
+def create_app() -> Flask:
+    app = Flask(__name__, template_folder="./ui/templates", static_folder="./ui/static")
 
     init_views(app)
 
-    app.run(debug=True)
+    return app

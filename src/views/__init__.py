@@ -1,12 +1,8 @@
-from flask import Blueprint, render_template
-
-views = Blueprint("views", __name__)
-
-
-@views.route("/")
-def page():
-    return render_template("/pages/index.html")
+from flask import Flask
+from .error_views import error_views
+from .game_views import game_views
 
 
-def init(app):
-    app.register_blueprint(views)
+def init_views(app: Flask) -> None:
+    app.register_blueprint(error_views)
+    app.register_blueprint(game_views)
