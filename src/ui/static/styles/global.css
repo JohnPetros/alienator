@@ -15,7 +15,7 @@ button:focus-visible, input:focus-visible {
   @apply focus-visible:ring-4 focus-visible:ring-fuchsia-400
 }
 
-button:hover, input:hover {
+button:hover {
   @apply opacity-75 transition-opacity duration-200
 }
 
@@ -53,4 +53,8 @@ button:hover, input:hover {
     top: -7px;
     transform: rotate(225deg) translate(15px, 0px);
   }
+}
+
+.htmx-request.loading {
+  @apply block animate-fade animate-once animate-duration-200 animate-ease-in
 }

@@ -1,0 +1,10 @@
+<button hx-get="/start" hx-swap="outerHTML" hx-indicator="#game-button-loading"
+  class="rounded-md py-2 px-3 border-2 border-fuchsia-200 bg-fuchsia-300 font-semibold text-fuchsia-900 animate-bounce animate-infinite animate-duration-1000 animate-ease-in">
+  <span _="on click remove .animate-bounce from the closest <button/> then remove me">
+    Start Game
+  </span>
+
+  {% from 'components/loading.html' import loading %}
+
+  {{ loading('game-button-loading') }}
+</button>
