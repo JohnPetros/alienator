@@ -8,16 +8,28 @@ game_controller = GameController()
 
 
 @game_views.route("/")
-def index() -> str:
-    return render_template("/pages/index.html")
+def index() -> Response:
+    has_game, last_genai_response = game_controller.handle_last_game_state(
+        request.cookies
+    )
+
+    response = make_response(
+        render_template(
+            "/pages/index.html", has_game=has_game, genai_response=last_genai_response
+        )
+    )
+
+    # response.delete_cookie("character")
+    # response.delete_cookie("history")
+    # response.delete_cookie("attempts")
+    # response.delete_cookie("last_genai_response")
+
+    return response
 
 
 @game_views.route("/start")
 def start_game() -> Response:
-    response = make_response(render_template("/components/form.html"))
-    response.delete_cookie("character")
-    response.delete_cookie("history")
-    response.delete_cookie("attempts")
+    response = make_response(render_template("/components/game-form.html"))
 
     game = game_controller.start()
 
@@ -35,18 +47,48 @@ def ask() -> Response:
     history = json.loads(request.cookies["history"])
     attempts = request.cookies["attempts"]
 
-    print(history)
-
-    genai_reponse, game = game_controller.handle_question(
+    result = game_controller.handle_question(
         question,
         {"character": character, "history": history, "attempts": attempts},
     )
 
-    response = make_response(genai_reponse)
+    genai_reponse = result["genai_response"]
+    template = result["template"]
+    game = result["game"]
 
-    print(genai_reponse)
+    response = make_response(template)
 
     response.set_cookie("history", json.dumps(game.history))
-    response.set_cookie("attempts", str(game.attempts - 1))
+    response.set_cookie("attempts", str(game.attempts))
+    response.set_cookie("last_genai_response", genai_reponse)
 
     return response
+
+
+@game_views.route("/attempts")
+def get_attempts() -> Response:
+    print("Eita")
+    return (
+        "15"
+        if "attempts" not in request.cookies or request.cookies["attempts"] == "0"
+        else request.cookies["attempts"]
+    )
+
+
+@game_views.route("/end")
+def end_game() -> Response:
+    attempts = request.cookies["attempts"]
+
+    response = make_response(game_controller.handle_end_game_attempts(int(attempts)))
+
+    response.delete_cookie("character")
+    response.delete_cookie("history")
+    response.delete_cookie("attempts")
+    response.delete_cookie("last_genai_response")
+
+    return response
+
+
+@game_views.route("/game-button")
+def get_game_button() -> str:
+    return render_template("/components/game-button.html")

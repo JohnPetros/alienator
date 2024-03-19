@@ -1,4 +1,4 @@
-from typing import Dict
+from typing import Dict, Tuple
 
 from providers.genai_provider import GenAiProvider
 from models.game_model import GameModel
@@ -42,7 +42,8 @@ class GameController:
                 "on load trigger click on #end-fail-game-alert-trigger then call htmx.ajax('GET', '/end', '#fail-message')",
             )
             return {
-                "genai_response": template,
+                "template": template,
+                "genai_response": "",
                 "game": GameModel(
                     history=[],
                     character="",
@@ -72,7 +73,8 @@ class GameController:
                 "on load trigger click on #end-success-game-alert-trigger then call htmx.ajax('GET', '/end', '#success-message')",
             )
             return {
-                "genai_response": template,
+                "template": template,
+                "genai_response": "",
                 "game": GameModel(
                     history=[],
                     character="",
@@ -82,18 +84,30 @@ class GameController:
 
         template = hyperscript.create_element(
             genai_response,
-            f"on load put {attempts - 1} into #attempts",
+            f"on load put {attempts} into #attempts",
             "span",
         )
 
         return {
-            "genai_response": template,
+            "template": template,
+            "genai_response": genai_response,
             "game": GameModel(
                 history=new_history,
                 character=character,
-                attempts=attempts - 1,
+                attempts=attempts,
             ),
         }
+
+    def handle_last_game_state(self, request: Dict) -> Tuple[bool, str]:
+        has_game = "last_genai_response" in request and request["last_genai_response"]
+
+        last_genai_response = (
+            request["last_genai_response"]
+            if has_game
+            else "I will think of character and you should guess its name correctly."
+        )
+
+        return (has_game, last_genai_response)
 
     def handle_end_game_attempts(self, attempts: int) -> str:
         return (
@@ -114,9 +128,9 @@ class GameController:
         ):
             print(game["attempts"])
             raise AppError("Invalid game", 400)
-        else:
-            return GameModel(
-                history=game["history"],
-                character=game["character"],
-                attempts=int(game["attempts"]),
-            )
+
+        return GameModel(
+            history=game["history"],
+            character=game["character"],
+            attempts=int(game["attempts"]),
+        )
