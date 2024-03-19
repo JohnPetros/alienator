@@ -1,4 +1,5 @@
 import { Form } from '../components/form.mjs'
+import { Hyperscript } from '../components/hyperscript.mjs'
 import { Modal } from '../components/modal.mjs'
 
 window.addEventListener('load', () => {
@@ -9,4 +10,11 @@ window.addEventListener('load', () => {
 
   gameForm.onSubmit = () => modal.close()
   modalGameForm.onSubmit = () => modal.close()
+
+  const hyperscript = new Hyperscript()
+
+  document.body.addEventListener('htmx:afterOnLoad', (event) => {
+    hyperscript.precessElement(event.detail.elt)
+  })
 })
+
