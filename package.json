@@ -1,8 +1,9 @@
 {
   "type": "module",
   "scripts": {
-    "dev": "flask --app ./src/app.py run --debug",
-    "style:watch": "tailwindcss -i ./src/ui/static/styles/global.css -o ./src/ui/static/build/styles/global.css --watch"
+    "dev:app": "flask --app ./src/app.py run --debug",
+    "dev:style": "tailwindcss -i ./src/ui/static/styles/global.css -o ./src/ui/static/build/styles/global.css --watch",
+    "dev": "concurrently 'npm run dev:app' 'npm run dev:style'"
   },
   "dependencies": {
     "@biomejs/biome": "^1.6.1",
@@ -14,6 +15,7 @@
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.7",
     "@types/node": "^20.11.28",
+    "concurrently": "^8.2.2",
     "tailwindcss": "^3.4.1"
   }
 }
