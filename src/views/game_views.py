@@ -52,6 +52,9 @@ def ask() -> Response:
         {"character": character, "history": history, "attempts": attempts},
     )
 
+    if "error" in result:
+        return result["error"]
+
     genai_reponse = result["genai_response"]
     template = result["template"]
     game = result["game"]
@@ -67,7 +70,6 @@ def ask() -> Response:
 
 @game_views.route("/attempts")
 def get_attempts() -> Response:
-    print("Eita")
     return (
         "15"
         if "attempts" not in request.cookies or request.cookies["attempts"] == "0"
