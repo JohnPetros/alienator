@@ -1,7 +1,10 @@
 from os import getenv
 from typing import Dict
 from typing import Literal
+
 import google.generativeai as genai
+
+from utils.app_error import AppError
 
 
 class GenAiProvider:
@@ -50,10 +53,14 @@ class GenAiProvider:
         return current_history
 
     def generate(self, prompt, history) -> str:
-        convo = self.model.start_chat(history=history)
+        try:
+            convo = self.model.start_chat(history=history)
 
-        user_prompt = {"role": "user", "parts": [prompt]}
+            user_prompt = {"role": "user", "parts": [prompt]}
 
-        convo.send_message(user_prompt)
+            convo.send_message(user_prompt)
 
-        return convo.last.text
+            return convo.last.text
+        except Exception as exception:
+            print("GEN AI", exception)
+            raise AppError("I'm sorry, I can't answer that question.") from exception
