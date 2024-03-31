@@ -6,12 +6,14 @@
   font-family: "Outfit", sans-serif;
 }
 
-button, input {
+button,
+input {
   outline: none;
   border: none;
 }
 
-button:focus-visible, input:focus-visible {
+button:focus-visible,
+input:focus-visible {
   @apply focus-visible:ring-4 focus-visible:ring-fuchsia-400
 }
 
@@ -19,10 +21,9 @@ button:hover {
   @apply opacity-75 transition-opacity duration-200
 }
 
-
 .cat-quote::after {
   content: "";
-  position:absolute;
+  position: absolute;
   bottom: -1px;
   left: 0;
   width: 24px;
@@ -36,7 +37,7 @@ button:hover {
 
 .alienator-quote::before {
   content: "";
-  position:absolute;
+  position: absolute;
   left: 92%;
   top: -7px;
   width: 32px;
