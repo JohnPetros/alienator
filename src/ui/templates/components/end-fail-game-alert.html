@@ -1,4 +1,5 @@
-<button id="end-fail-game-alert-trigger" data-modal-target="end-fail-game-alert" data-modal-toggle="end-fail-game-alert"
+<button id="end-fail-game-alert-trigger" data-modal-target="end-fail-game-alert"
+  data-modal-toggle="end-fail-game-alert"
   class="sr-only text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
   Toggle modal
 </button>
@@ -6,16 +7,22 @@
 <div id="end-fail-game-alert" tabindex="-1"
   class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-full max-h-full bg-black/60 transition-all duration-200 animate-fade animate-duration-200">
   <div class="relative p-4 w-full max-w-md max-h-full ">
-    <div class="grid place-content-center space-y-4 p-6 bg-white rounded-lg shadow dark:bg-gray-700">
+    <div
+      class="grid place-content-center space-y-4 p-6 bg-white rounded-lg shadow dark:bg-gray-700">
       <i class="ph-bold ph-x-circle text-6xl text-center text-red-500"></i>
 
-      <p id="fail-message" class="text-center text-red-700 font-semibold text-2xl">You couldn't get the character's
-        name! 😭</p>
-      <p class="text-center text-zinc-700 text-xl font-medium">Shall we play again?</p>
+      <p id="fail-message"
+        class="text-center text-red-700 font-semibold text-2xl">You couldn't get
+        the character's name! 😭
+      </p>
+      <p class="text-center text-zinc-700 text-xl font-medium">
+        Shall we play again?
+      </p>
 
       <button data-modal-hide="end-fail-game-alert" type="button"
         class="mx-auto focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-md px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900 text-lg"
-        hx-get="/game-button" hx-trigger="click" hx-target="#game-form" _="on click put '15' into #attempts">
+        hx-get="/game-button" hx-trigger="click" hx-target="#game-form"
+        _="on click put '15' into #attempts">
         Yes!
       </button>
     </div>
