@@ -9,6 +9,7 @@ from utils.app_error import AppError
 
 class GenAiProvider:
     def __init__(self):
+        print(getenv("GEMINI_API_KEY"))
         genai.configure(api_key=getenv("GEMINI_API_KEY"))
 
         generation_config = {
