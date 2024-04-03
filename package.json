@@ -1,9 +1,8 @@
 {
   "type": "module",
   "scripts": {
-    "app": "gunicorn --config configs/gunicorn_config.py 'app:create_app()'",
+    "start": "gunicorn --config configs/gunicorn_config.py 'app:create_app()'",
     "style": "tailwindcss -i ./src/ui/static/styles/global.css -o ./src/ui/static/build/styles/global.css",
-    "start": "concurrently 'npm run style' 'npm run app'",
     "dev:app": "flask --app ./src/app.py run --debug",
     "dev:style": "tailwindcss -i ./src/ui/static/styles/global.css -o ./src/ui/static/build/styles/global.css --watch",
     "dev": "concurrently 'npm run dev:app' 'npm run dev:style'"
