@@ -23,7 +23,7 @@ if not has_game else '' %}
             data-form="trigger"
             data-loading-disable
             type="submit"
-            _="on click trigger click on #modal-trigger"
+            _="on click if #game-modal.dataset.state == 'open' then trigger click on #modal-trigger"
             class="w-max mx-auto px-4 py-1 rounded-lg bg-fuchsia-200 text-zinc-700 font-bold transition-transform duration-200 hover:scale-105">
             Send
         </button>

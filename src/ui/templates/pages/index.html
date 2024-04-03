@@ -22,7 +22,9 @@
 </main>
 
 <div class="absolute">
-  {% include 'components/game-modal.html' %}
+  <div class="md:hidden md:pointer-events-none">
+    {% include 'components/game-modal.html' %}
+  </div>
   {% include 'components/end-success-game-alert.html' %}
   {% include 'components/end-fail-game-alert.html' %}
 </div>
