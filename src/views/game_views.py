@@ -1,4 +1,5 @@
 import json
+
 from flask import Blueprint, request, Response, make_response, render_template
 
 from controllers.game_controller import GameController
@@ -16,7 +17,9 @@ def index() -> Response:
 
     response = make_response(
         render_template(
-            "/pages/index.html", has_game=has_game, genai_response=last_genai_response
+            "/pages/index.html",
+            has_game=has_game,
+            genai_response=last_genai_response,
         )
     )
 
