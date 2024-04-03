@@ -1,5 +1,6 @@
 import json
 from flask import Blueprint, request, Response, make_response, render_template
+
 from controllers.game_controller import GameController
 
 game_views = Blueprint("game_views", __name__)

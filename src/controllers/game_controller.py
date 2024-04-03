@@ -139,7 +139,6 @@ class GameController:
             or not isinstance(game["character"], str)
             or not int(game["attempts"])
         ):
-            print(game["attempts"])
             raise AppError("Invalid game", 400)
 
         return GameModel(

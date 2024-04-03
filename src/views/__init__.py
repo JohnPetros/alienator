@@ -1,4 +1,5 @@
 from flask import Flask
+
 from .error_views import error_views
 from .game_views import game_views
 
