@@ -10,4 +10,6 @@ RUN npm run style
 
 EXPOSE 8000
 
+USER pn
+
 CMD npm start

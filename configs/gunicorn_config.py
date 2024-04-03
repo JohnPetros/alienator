@@ -5,6 +5,8 @@ import os
 
 from distutils.util import strtobool
 
+os.getenv("GEMINI_API_KEY")
+
 chdir = "src"
 
 bind = os.getenv("WEB_BIND", "0.0.0.0:8000")
