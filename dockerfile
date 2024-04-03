@@ -8,6 +8,6 @@ RUN pip install -r requirements.txt && npm install
 
 RUN npm run style
 
-EXPOSE 5000
+EXPOSE 8000
 
 CMD npm start
