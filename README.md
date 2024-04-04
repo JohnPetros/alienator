@@ -10,16 +10,16 @@
    <a href="https://github.com/JohnPetros">
       <img alt="Made by JohnPetros" src="https://img.shields.io/badge/made%20by-JohnPetros-blueviolet">
    </a>
-   <img alt="GitHub Language Count" src="https://img.shields.io/github/languages/count/JohnPetros/johns-burguer">
-   <a href="https://github.com/JohnPetros/johns-burguer/commits/main">
-      <img alt="GitHub Last Commit" src="https://img.shields.io/github/last-commit/JohnPetros/johns-burguer">
+   <img alt="GitHub Language Count" src="https://img.shields.io/github/languages/count/JohnPetros/alianator">
+   <a href="https://github.com/JohnPetros/alianator/commits/main">
+      <img alt="GitHub Last Commit" src="https://img.shields.io/github/last-commit/JohnPetros/alianator">
    </a>
   </a>
    </a>
-   <a href="https://github.com/JohnPetros/johns-burguer/blob/main/LICENSE.md">
-      <img alt="GitHub License" src="https://img.shields.io/github/license/JohnPetros/johns-burguer">
+   <a href="https://github.com/JohnPetros/alianator/blob/main/LICENSE.md">
+      <img alt="GitHub License" src="https://img.shields.io/github/license/JohnPetros/alianator">
    </a>
-    <img alt="Stargazers" src="https://img.shields.io/github/stars/JohnPetros/johns-burguer?style=social">
+    <img alt="Stargazers" src="https://img.shields.io/github/stars/JohnPetros/alianator?style=social">
 </div>
 <br>
 
@@ -27,9 +27,9 @@
 
 Alienator is a web game where the user should guess the character name of Alienator, the boss of the game.
 
-The user should send their question to Alienator who answers whether the question is correct or not as well as tips at sometimes to help them. The user has up to 15 attempts to guess correctly.
+The user should send their question to Alienator who answers whether the question is correct or not as well as tips at sometimes to help them. The user has up to 15 attempts to guess it correctly.
 
-The goal of developing this project was learn the basic features of [Astro](https://astro.build/), an amazing web framework for content-driven websites
+The goal of developing this project was learn the features of [HTMX](https://htmx.org/), an amazing web technology that gives you access to AJAX without [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript), as well as [_hyperscript](https://hyperscript.org/), an easy lib to execute JavaScript code directly in HTML (similiar to [Tailwind](https://tailwindcss.com/) but for JS 😜).
 
 ### ⏹️ Demonstration
 
@@ -45,169 +45,85 @@ The goal of developing this project was learn the basic features of [Astro](http
 
 ## ✨ Features
 
-### ✅ Functional features
+### User
 
-#### Home section
+- [x] The game should be switch between 3 states: *ready to start* and *running*
+- [x] The user should start the game by a button if the game is *ready to start*
+- [x] The user should send a question to Alienator by a form if the game is *running*
+- [x] The user should not stop the game if it is *running*, that means the game only ends after the user wins or loses
+- [x] The user should start as many games as they want
 
-- [x] Should display a CTA (call to action) to the user
 
-#### About section
+### Alianator
 
-- [x] Should display the background history about John's Burguer Delivery
+- [x] Alianator should think the name of a character as the game starts
+- [x] Alianator should avoid giving simple yes or no answers
+- [x] Alianator should answers user's question but he can never reveal the character he thought of
+- [x] Alianator should give user some hints in some of his asnwers to help them to guess it correclty
+- [x] Alianator should congratulate user if they manage to guess the character's name
+- [x] Alianator should mock the user if the cannot guess the character's name
+- [x] Alianator should say the name of the character as the game ends regardless whether the user won or lost
+- [x] Alianator should not answers not friendly family questions
+- [x] The "wisdom" of Aliantor shoud come from an AI
 
-#### Menu section
+### Game state
 
-- [x] All food items of John's Burguer Delivery should be list on a menu section
-- [x] The food items should be categorized in:
-  - burguers
-  - drinks
-  - deserts
-- [x] The user should be able to filter the menu by each category listed above
-- [x] Each food item should be displayed as a card showing:
-    - image
-    - name
-    - price
-- [x] The user should be able to access the cart from the food item card
+- [x] The left attempts and The history of the user and Alianator "chat" should be saved while the game is *running*
+- [x] The history should empty and the attempts should reset to 15 if the game is *ready to start*
     
-#### Contact section
+### Layout
 
-- [x] Should be provided a contact form for the user
-- [x] The contact form shold have the fields:
-    - name
-    - email
-    - message
-- [x] Should display a map illustraring the delivery app's address
-
-#### Navigation bar
-
-- [x] Should provide a bar to the user can navigate across the main page 
-- [x] The navigation bar should have link to each section of the main page
-
-#### Cart
-
-- [x] The user should be able to add a food item to cart
-- [x] Before adding the item to cart the user should add condiments for the food item
-- [x] The food item's condiments should be related to its category
-- [x] Each condiment should have options
-- [x] The user should pick only one option to add the condiment  
-- [x] The user should be able to edit the added food item  
-- [x] The user should be able to emove the added food item  
-- [x] The cart should display a table containing each added food item and showing for each of them:
-    - quantity
-    - name
-    - total price and unit price
-    - action buttons to edit or remove the item 
-- [x] The cart should display the total cost considering all items
-
-#### Checkout
-
-- [x] The user should be able to fill in their data to a transaftion form
-- [x] The payment method shoould be only by credit card
-- [x] The checkout form should have the fields:
-    - E-mail
-    - Name
-    - Address
-        - city
-        - country
-        - street
-        - number
-        - zipcode
-        - state
-    - Credit card
-        - number
-        - expiration
-        - CVC
-- [x] The cart should be shown on the checkout page having keeping its features
-
-#### Custom burguer
-
-- [x] The user should be able to create a custom burguer adding ingredient to form it
-- [x] The ingredients should be categorized in:
-    - Sauce
-    - Meat
-    - Cheese
-    - Vegetable
-- [x] The user should only add one ingredient at a time
-- [x] The user should be able to remove the added ingredient
-- [x] The total cost of the custom burguer should be calculated as the user add an ingredient
-
-### ☑️ Nonfunctional features
-
-#### Cart
-
-- [x] The items on the cart should be persistive
-- [x] The option of each condiment should be clearly highlighted on the form
-- [x] The total price of the cart should be highlighted to the user
-- [x] The user should be alerted before deleting an item
-
-#### Checkout
-
-- [x] The checkout form should not be fully loaded (the user address should be filled first and then their payment method data) 
-- [x] The user should not access the checkout if it is impossible to complete a payment. E.g.: if the cart is empty, then the user cannot complete a payment
-- [] Should persist user data if they are already a customer, that is, they have already purchased something from John's Burguer Delivery
-
-#### Custom burguer
-
-- [x] The user should be alerted before going to the checkout after completing their burguer
-- [] The user should be alerted before leave the custom burguer section
-
-#### Layout
-
-- [x] The layout should be responsive to multiple devices screens
-- [x] The layout should have a color pallete facing the orange, which is related to the fast food context 
-
-#### Accessebility
-
-- [x] Should use semantic HTML tags when is possible
-- [x] The components that requires user interactivity should comply the accessibility rules proposed by [WAI (web accessibility initiative)](https://www.w3.org/WAI/)
+- [x] The layout and the game behavior should adapt to the user device regardless of its size
 
 ---
 
 ## ⚙️ Architecture
 
-## 🛠️ Technologies, tools and services
+## 🛠️ Technologies and tools
 
-This project was developed using the following technologies:
+- **[HTMX](https://tailwindcss.com/)** to make requests to the server directly on the HTML
 
-- **[Astro](https://astro.build/)** to build the server, pages and static components
+- **[Hyperscript](https://hyperscript.org/)** to make some components interactive
 
-- **[React](https://tailwindcss.com/)** to build interactive components
+- **[Python Flask](https://flask.palletsprojects.com/en/3.0.x/)** to build the server
 
-- **[TailwindCSS](https://tailwindcss.com/)** to style the app
+- **[Gemini Ai](https://gemini.google.com/app)** to serve as the "wisdom" of Alianator
 
-- **[Preline UI](https://preline.co/)** to build static accessible ui components with tailwindCSS
+- **[Tailwind](https://tailwindcss.com/)** to style the app
 
-- **[Headless UI](https://headlessui.com/)** to build interactive accessible ui components with React 
+- **[Flowbite UI](https://preline.co/)** to build static accessible ui components with tailwind
 
-- **[Radix UI](https://headlessui.com/)** to build accessible form components with React
 
-- **[Framer Motion](https://htmx.org/)** to animate React components
-
-> For more details about the project's dependencies like specifi versions of each dependency, se [package.json](https://github.com/JohnPetros/johns-burguer/blob/main/package.json)
+> For more details about the project's dependencies like specifi versions of each dependency, se [package.json](https://github.com/JohnPetros/alianator/blob/main/package.json)
 
 ---
 
 ## 🚀 How to run the application?
 
+#### In the hardest way 😔
+
 ### 🔧 Prerequisites
 
 Before download the prject you will need install some tools:
 
-- [Git](https://git-scm.com/)
-- [npm](https://nodejs.org/en), [yarn](https://nodejs.org/en) or [pnpm](https://pnpm.io/pt/) (I'll use pnpm)
+- [pip] to install python packages
+- [npm](https://nodejs.org/en), [yarn](https://nodejs.org/en) or [pnpm](https://pnpm.io/pt/) (I'll use pnpm) to install node packages
 
 > Besides that, it is good to have some tool to write the code like [VSCode](https://code.visualstudio.com/)
 
-> Also it is pivotal setting the environment variables on the `.env` file before running the application. See the [.env.example](https://github.com/JohnPetros/johns-burguer/blob/main/.env.example) file to know which variables should be set
+> Also it is pivotal setting the environment variables on the `.env` file before running the application. See the [.env.example](https://github.com/JohnPetros/alianator/blob/main/.env.example) file to know which variables should be set
 
 ### 📟 Running the aplication
 
 ```bash
 
 # Clone this repo
-$ git clone https://github.com/JohnPetros/johns-burguer.git .
+$ git clone https://github.com/JohnPetros/alianator.git .
 
-# Install the dependencies
+# Install the python dependencies
+$ pip install -r requirements.txt
+
+# Install the node dependencies
 $ pnpm install
 
 # Run the application on a development environment
@@ -215,13 +131,31 @@ $ pnpm dev
 
 ```
 
-> Probably the aplication will be running on http://localhost:4321
+> Probably the aplication will be running on http://localhost:5000
 
 ---
 
+#### In the (Docker) easiest way 😄
+
+### 📟 Running the aplication
+
+### 🔧 Prerequisites
+
+- [Docker](https://www.docker.com/) the amazing technology to manage [containers](https://www.docker.com/resources/what-container/).
+
+
+```bash
+
+# Run
+$ docker compose up --build
+
+```
+
+> Probably the aplication will be running on http://localhost:5000
+
 ## 🚚 Deploy
 
-This application's deploy was made using **[Netlify plataform](https://www.netlify.com/)**, which means you can use the running application accessing this **[link](https://johns-burguer.netlify.app/)**.
+This application's deploy was made using **[Rende plataform](https://www.render.com/)**, which means you can use the running application accessing this **[link](https://alienator.onrender.com)**.
 
 ---
 
@@ -230,7 +164,7 @@ This application's deploy was made using **[Netlify plataform](https://www.netli
 ```bash
 
 # Fork this repo
-$ git clone https://github.com/JohnPetros/johns-burguer.git
+$ git clone https://github.com/JohnPetros/alianator.git
 
 # Create a nem branch for the new feature
 $ git checkout -b new-feature
@@ -245,11 +179,11 @@ $ git push origin new-feature
 
 > You must replace new-feature with the name the feature you are adding
 
-> You can also open a [new issue](https://github.com/JohnPetros/johns-burguer/issues) about some problem, question or sugestion for the project. I will be happy to help as well as improve this application
+> You can also open a [new issue](https://github.com/JohnPetros/alianator/issues) about some problem, question or sugestion for the project. I will be happy to help as well as improve this application
 
 ---
 
-## 📝 Licença
+## 📝 Licence
 
 This application is under MIT Licence. See [the licence file](LICENSE) to get more details about it.
 
