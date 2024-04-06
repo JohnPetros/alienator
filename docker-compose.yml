@@ -7,5 +7,5 @@ services:
     volumes: 
       - .:/home/pn/unipetros
     ports:
-      - 8000:8000
+      - 5000:5000
 
