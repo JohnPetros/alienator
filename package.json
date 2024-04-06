@@ -2,7 +2,7 @@
   "type": "module",
   "scripts": {
     "start": "gunicorn --config configs/gunicorn_config.py 'app:create_app()'",
-    "app": "flask --app ./src/app.py run",
+    "app": "flask --app ./src/app.py run --host 0.0.0.0",
     "style": "tailwindcss -i ./src/ui/static/styles/global.css -o ./src/ui/static/build/styles/global.css",
     "dev:app": "flask --app ./src/app.py run --debug",
     "dev:style": "tailwindcss -i ./src/ui/static/styles/global.css -o ./src/ui/static/build/styles/global.css --watch",
