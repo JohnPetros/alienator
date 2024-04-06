@@ -184,7 +184,7 @@ $ git push origin new-feature
 
 ## 📝 Licence
 
-This application is under MIT Licence. See [the licence file](LICENSE) to get more details about it.
+This application is under MIT Licence. See [the licence file](https://github.com/JohnPetros/alienator/blob/main/license) to get more details about it.
 
 ---
 
