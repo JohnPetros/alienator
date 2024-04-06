@@ -1,8 +1,10 @@
 {% extends '/layouts/root.html' %}
 
 {% block body %}
+
 <main
-  class="h-full w-full bg-[url('/static/images/sprite.gif')] bg-no-repeat bg-center bg-mobile-size sm:bg-cover overflow-hidden">
+  class="h-full w-full bg-[url('/static/images/sprite.gif')] bg-no-repeat bg-center bg-mobile-size sm:bg-cover ">
+
   {% include '/components/cat-quote.html' %}
   {% include '/components/alienator-quote.html' %}
   <div class="hidden md:block md:absolute md:top-[40%] md:left-[12%]">
@@ -21,7 +23,7 @@
   </div>
 </main>
 
-<div class="absolute">
+<div class="absolute overflow-hidden">
   <div class="md:hidden md:pointer-events-none">
     {% include 'components/game-modal.html' %}
   </div>
