@@ -60,13 +60,13 @@ class GameController:
             prompt = f"""
             It's my turn! Let's see if I can guess the character you're thinking of. I'll ask you a question, but there are a few ground rules:
 
-            You can't tell me the character's name, no matter what.
-            Your answers should be short and sweet, under 300 characters.
-            If I ask you directly for the name, you'll have to tell me you can't reveal it.
-            I'd prefer unique answers each time, so try to avoid repeating yourself.
-            I would appreciate it if your answers were complete and included some subtle hints.
-            Simple yes or no answers won't help me guess.
-            If I manage to guess the character correctly after a question, you'll declare victory with a "you win" message. Otherwise, the game continues!
+            - You cannot tell me the {character}'s name, no matter what only when I win the game.
+            - Your answers should be short and sweet, under 300 characters.
+            - If I ask you directly for the name, you'll have to tell me you can't reveal it.
+            - I'd prefer unique answers each time, so try to avoid repeating yourself.
+            - I would appreciate it if your answers were complete and included some subtle hints.
+            - Simple yes or no answers won't help me guess.
+            - If I manage to guess {character}'s name you thought of correctly in my question, you'll declare victory with a "you win" message. Otherwise, the game continues!
         
             So, my question is: "{question if question.endswith('?') else question + '?'}"
             """
