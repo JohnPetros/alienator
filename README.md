@@ -23,7 +23,7 @@
 
 ## 🖥️ About the project
 
-Alienator is a web game where the user should guess the character name of Alienator, the boss of the game.
+Alienator is a **web game** where the user should guess the character name of Alienator, the boss of the game.
 
 The user should send their question to Alienator who answers whether the question is correct or not as well as tips at sometimes to help them. The user has up to 15 attempts to guess it correctly.
 
