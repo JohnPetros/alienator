@@ -93,7 +93,7 @@ The goal of developing this project was learn the features of [HTMX](https://htm
 - **[Flowbite UI](https://preline.co/)** to build static accessible ui components with tailwind
 
 
-> For more details about the project's dependencies like specifi versions of each dependency, se [package.json](https://github.com/JohnPetros/alienator/blob/main/package.json)
+> For more details about the project's dependencies like specific versions of each dependency, see [package.json](https://github.com/JohnPetros/alienator/blob/main/package.json) and [requirements.txt](https://github.com/JohnPetros/alienator/blob/main/requirements.txt)
 
 ---
 
