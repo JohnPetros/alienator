@@ -103,7 +103,7 @@ The goal of developing this project was learn the features of [HTMX](https://htm
 
 ### 🔧 Prerequisites
 
-Before download the prject you will need install some tools:
+Before download the project you will need install some tools:
 
 - [pip] to install python packages
 - [npm](https://nodejs.org/en), [yarn](https://nodejs.org/en) or [pnpm](https://pnpm.io/pt/) (I'll use pnpm) to install node packages
