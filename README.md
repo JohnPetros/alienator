@@ -80,17 +80,17 @@ The goal of developing this project was learn the features of [HTMX](https://htm
 
 ## 🛠️ Technologies and tools
 
-- **[HTMX](https://tailwindcss.com/)** to make requests to the server directly on the HTML
+- **[HTMX](https://tailwindcss.com/)** for making requests to the server directly on the HTML
 
-- **[Hyperscript](https://hyperscript.org/)** to make some components interactive
+- **[Hyperscript](https://hyperscript.org/)** for making some components interactive
 
-- **[Python Flask](https://flask.palletsprojects.com/en/3.0.x/)** to build the server
+- **[Python Flask](https://flask.palletsprojects.com/en/3.0.x/)** for building the server
 
-- **[Gemini Ai](https://gemini.google.com/app)** to serve as the "wisdom" of **Alienator**
+- **[Gemini Ai](https://gemini.google.com/app)** for serving the "wisdom" of **Alienator**
 
-- **[Tailwind](https://tailwindcss.com/)** to style the app
+- **[Tailwind](https://tailwindcss.com/)** for styling the app
 
-- **[Flowbite UI](https://preline.co/)** to build static accessible ui components with tailwind
+- **[Flowbite UI](https://preline.co/)** for building static accessible ui components with tailwind
 
 
 > For more details about the project's dependencies like specific versions of each dependency, see [package.json](https://github.com/JohnPetros/alienator/blob/main/package.json) and [requirements.txt](https://github.com/JohnPetros/alienator/blob/main/requirements.txt)
