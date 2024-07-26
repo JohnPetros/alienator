@@ -45,34 +45,34 @@ The goal of developing this project was learn the features of [HTMX](https://htm
 
 ### User
 
-- [x] The game should be switch between 3 states: *ready to start* and *running*
-- [x] The user should start the game by a button if the game is *ready to start*
-- [x] The user should send a question to **Alienator** by a form if the game is *running*
-- [x] The user should not stop the game if it is *running*, that means the game only ends after the user wins or loses
-- [x] The user should start as many games as they want
+- [x] The game should be switch between 3 states: *ready to start* and *running*.
+- [x] The user should start the game by a button if the game is *ready to start*.
+- [x] The user should send a question to **Alienator** by a form if the game is *running*.
+- [x] The user should not stop the game if it is *running*, that means the game only ends after the user wins or loses.
+- [x] The user should start as many games as they want.
 
 
 ### Alienator
 
-- [x] **Alienator** should think the name of a character as the game starts
-- [x] **Alienator** should avoid giving simple yes or no answers
-- [x] **Alienator** should answers user's question but he can never reveal the character he thought of
-- [x] **Alienator** should give user some hints in some of his asnwers to help them to guess it correclty
-- [x] **Alienator** should congratulate user if they manage to guess the character's name
-- [x] **Alienator** should mock the user if the cannot guess the character's name
-- [x] **Alienator** should say the name of the character as the game ends regardless whether the user won or lost
-- [x] **Alienator** should not answers not friendly family questions
-- [x] The **Alienator**'s cat should inform the user how many attempts are left (this number should be updated with each question)
-- [x] The "wisdom" of **Alienator** shoud come from an AI
+- [x] **Alienator** should think the name of a character as the game starts.
+- [x] **Alienator** should avoid giving simple yes or no answers.
+- [x] **Alienator** should answers user's question but he can never reveal the character he thought of.
+- [x] **Alienator** should give user some hints in some of his asnwers to help them to guess it correclty.
+- [x] **Alienator** should congratulate user if they manage to guess the character's name.
+- [x] **Alienator** should mock the user if the cannot guess the character's name.
+- [x] **Alienator** should say the name of the character as the game ends regardless whether the user won or lost.
+- [x] **Alienator** should not answers not friendly family questions.
+- [x] The **Alienator**'s cat should inform the user how many attempts are left (this number should be updated with each question).
+- [x] The "wisdom" of **Alienator** shoud come from an AI.
 
 ### Game state
 
-- [x] The left attempts and The history of the user and **Alienator** "chat" should be saved while the game is *running*
-- [x] The history should empty and the attempts should reset to 15 if the game is *ready to start*
+- [x] The left attempts and The history of the user and **Alienator** "chat" should be saved while the game is *running*.
+- [x] The history should empty and the attempts should reset to 15 if the game is *ready to start*.
     
 ### Layout
 
-- [x] The layout and the game behavior should adapt to the user device regardless of its size
+- [x] The layout and the game behavior should adapt to the user device regardless of its size.
 
 ---
 
