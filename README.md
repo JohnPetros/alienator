@@ -117,7 +117,7 @@ Before download the project you will need install some tools:
 ```bash
 
 # Clone this repo
-$ git clone https://github.com/JohnPetros/alienator.git .
+$ git clone https://github.com/JohnPetros/alienator.git
 
 # Install the python dependencies
 $ pip install -r requirements.txt
